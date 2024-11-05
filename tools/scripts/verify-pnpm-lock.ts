@@ -9,6 +9,16 @@ const lockFileContents = readFileSync(lockFile, 'utf8')
 // Split the file into lines
 const lines = lockFileContents.split('\n')
 
+/*
+// Write the lock file
+const LockFileWrites = readFileSync(lockFile, 'utf8')
+
+if (LockFileWrites.length>0){
+  console.error('!!fOUND ${LockFileWrites.length} lines with ${needle} in ${lockFile}.')
+  process.exit(1)
+  }
+}
+*/
 // Make sure none of the lines has the needle
 const offendingLines = lines.filter((line) => line.includes(needle))
 
